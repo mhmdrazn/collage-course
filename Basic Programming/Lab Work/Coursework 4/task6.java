@@ -22,4 +22,16 @@ public class Main {
             System.out.print(angka[i]);
         }
     }
+
+    public static void swap(int[] arr, int a, int b){
+        int temp = arr[a-1];
+        arr[a-1] = arr[b-1];
+        arr[b-1] = temp;
+    }
+    
+    public static void swapLast(int[] arr, int a, int b){
+        int temp = arr[a-1];
+        arr[a-1] = arr[b+1];
+        arr[b+1] = temp;
+    }
 }
