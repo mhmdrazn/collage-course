@@ -1,3 +1,5 @@
-Course : Data Structure and Algorithm/n
-Semester : 3/n
+Course : Data Structure and Algorithm
+
+Semester : 3
+
 Lecturer : Ahmad Mukhlason, S.Kom., M.Sc., Ph.D.
