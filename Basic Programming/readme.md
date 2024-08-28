@@ -1,5 +1,7 @@
-Course : Basic Programming
+Course      : Basic Programming
 
-Grade : A
+Semester    : 2
 
-Lecturer : Ahmad Mukhlason, S.Kom., M.Sc., Ph.D.
+Grade       : A
+
+Lecturer    : Ahmad Mukhlason, S.Kom., M.Sc., Ph.D.
