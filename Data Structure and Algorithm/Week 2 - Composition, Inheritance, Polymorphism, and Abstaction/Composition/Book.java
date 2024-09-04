@@ -1,6 +1,8 @@
 /**
  * The Book class models a book with one (and only one) author.
  */
+
+ package Composition;
 public class Book {
     // The private instance variables
     private String name;

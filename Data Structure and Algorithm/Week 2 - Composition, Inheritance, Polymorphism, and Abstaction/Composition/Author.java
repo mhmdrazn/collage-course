@@ -1,7 +1,9 @@
 /** 
  * The Author class model a book's author.
  */
-public class Author {
+package Composition;
+
+ public class Author {
     // The private instance variables
     private String name;
     private String email;

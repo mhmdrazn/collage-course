@@ -3,7 +3,7 @@ package Composition;
 /**
  * A test driver program for the Book class.
  */
-public class TestBook {
+public class Main {
     public static void main(String[] args) {
        // We need an Author instance to create a Book instance
        Author ahTeck = new Author("Tan Ah Teck", "ahTeck@somewhere.com", 'm');
