@@ -1,3 +1,5 @@
+package Problem_1;
+
 /**
  * ES234317 - Algorithms and Data Structures
  * Gasal | 2024-2025

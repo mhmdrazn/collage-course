@@ -1,3 +1,5 @@
+package Problem_1;
+
 /**
  * ES234317 - Algorithms and Data Structures
  * Gasal | 2024-2025
@@ -7,13 +9,12 @@
  * Class        : C
  */
 
-public class Cat extends Animal{
-    public Cat(String name){
-        super(name);
+abstract public class Animal {
+    private String name;
+    
+    public Animal(String name) {
+        this.name = name;
     }
 
-    @Override
-    public void greets(){
-        System.out.println("Meow");
-    }
+    abstract void greets();
 }
