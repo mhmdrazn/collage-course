@@ -75,14 +75,20 @@ public void printNumbers(List<? extends Number> list) {
 - **Duplicates Allowed:** Unlike `Set`, duplicates are allowed in `ArrayList`.
 
 ### **Common Methods:**
-| Method | Description |
-| ------ | ----------- |
-| `add(E e)` | Adds an element to the list. |
-| `get(int index)` | Retrieves the element at the specified index. |
-| `remove(int index)` | Removes the element at the specified index. |
-| `size()` | Returns the number of elements in the list. |
-| `contains(Object o)` | Checks if the list contains the specified element. |
-| `clear()` | Removes all elements from the list. |
+
+| Method | Description | Return Type |
+| ------ | ----------- | ----------- |
+| `add(E e)` | Adds an element to the end of the list. | `boolean` |
+| `add(int index, E element)` | Inserts an element at the specified index. | `void` |
+| `get(int index)` | Retrieves the element at the specified index. | `E` (generic type) |
+| `remove(int index)` | Removes the element at the specified index. | `E` (generic type) |
+| `remove(Object o)` | Removes the first occurrence of the specified element. | `boolean` |
+| `size()` | Returns the number of elements in the list. | `int` |
+| `contains(Object o)` | Checks if the list contains the specified element. | `boolean` |
+| `clear()` | Removes all elements from the list. | `void` |
+| `isEmpty()` | Checks if the list is empty. | `boolean` |
+| `indexOf(Object o)` | Returns the index of the first occurrence of the specified element. | `int` |
+| `set(int index, E element)` | Replaces the element at the specified index with the given element. | `E` (generic type) |
 
 ### **Syntax:**
 ```java
@@ -113,15 +119,23 @@ list.remove(1); // Removes "Banana"
 - **Sequential Access:** Accessing elements by index requires traversal from the start or end, making it slower than `ArrayList` for random access.
 
 ### **Common Methods:**
-| Method | Description |
-| ------ | ----------- |
-| `add(E e)` | Adds an element to the end of the list. |
-| `addFirst(E e)` | Inserts an element at the start of the list. |
-| `addLast(E e)` | Inserts an element at the end of the list. |
-| `getFirst()` | Retrieves the first element in the list. |
-| `getLast()` | Retrieves the last element in the list. |
-| `removeFirst()` | Removes the first element in the list. |
-| `removeLast()` | Removes the last element in the list. |
+
+| Method | Description | Return Type |
+| ------ | ----------- | ----------- |
+| `add(E e)` | Adds an element to the end of the list. | `boolean` |
+| `add(int index, E element)` | Inserts an element at the specified index. | `void` |
+| `addFirst(E e)` | Inserts an element at the start of the list. | `void` |
+| `addLast(E e)` | Inserts an element at the end of the list. | `void` |
+| `get(int index)` | Retrieves the element at the specified index. | `E` (generic type) |
+| `getFirst()` | Retrieves the first element in the list. | `E` (generic type) |
+| `getLast()` | Retrieves the last element in the list. | `E` (generic type) |
+| `remove(int index)` | Removes the element at the specified index. | `E` (generic type) |
+| `removeFirst()` | Removes the first element in the list. | `E` (generic type) |
+| `removeLast()` | Removes the last element in the list. | `E` (generic type) |
+| `clear()` | Removes all elements from the list. | `void` |
+| `size()` | Returns the number of elements in the list. | `int` |
+| `contains(Object o)` | Checks if the list contains the specified element. | `boolean` |
+| `isEmpty()` | Checks if the list is empty. | `boolean` |
 
 ### **Syntax:**
 ```java
@@ -158,7 +172,7 @@ list.removeLast(); // Removes "Apple"
 - **ArrayList** is best for situations where you need fast random access, but less frequent insertions and deletions.
 - **LinkedList** is ideal for applications where frequent insertion and deletion at the beginning or end are required, though it comes with a performance cost for random access.
 
---- 
+---
 
 ### **References:**
 - [Oracle Java Docs on Generics](https://docs.oracle.com/javase/tutorial/java/generics/)
@@ -166,5 +180,3 @@ list.removeLast(); // Removes "Apple"
 - [Java LinkedList Documentation](https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html)
 
 ---
-
-This markdown guide covers all the essential details about **Generics**, **ArrayList**, and **LinkedList** in Java.
