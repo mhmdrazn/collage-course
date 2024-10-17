@@ -1,6 +1,12 @@
+package Q3;
+
+import java.util.*;
+
 public class Main {
     public static void main(String[] args) {
-        
+        int[] a = {3, 5, 7, 7, 9, 8};
+        int i = 5;
+        change(a, i);
     }
 
     static LinkedList<Integer> change (int [] a, int i){
@@ -25,7 +31,9 @@ public class Main {
 
         // print the value in the linkedlist and return the list
         for (int v : list){
-            System.out.println(v + " ");
+            System.out.print(v + " ");
         }
+ 
+        return list;
     }
 }

@@ -16,6 +16,7 @@ package Problem_1;
       Cat lola = new Cat("lola");
       //Cat anjing = new BigDog("anjing");
       
+      loli.greets();
       greetMe(loli);
       greetMe(lola);
       //greetMe(anjing);

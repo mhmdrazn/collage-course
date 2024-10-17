@@ -31,7 +31,7 @@ public class Main {
         char winner = '0';
         int maxVote = 0;
         
-        for(Character c:set){ // iterasi untuk setiap key yang ada di set 
+        for(Character c:set){ // iteras   i untuk setiap key yang ada di set 
             int value = count.get(c); // kita ambil value dari setiap key
             if (value > maxVote){ // cek, kalo valuenya lebih dari maxvote
                 winner = c; // set winner
