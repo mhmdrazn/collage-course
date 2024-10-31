@@ -17,7 +17,7 @@ There are three main implementations of `Set`:
 Here are some common methods available in the `Set` interface:
 
 | Method | Description |
-|--------|-------------|
+|--------|-------------|    
 | `add(E e)` | Adds the specified element to the set if it is not already present. |
 | `remove(Object o)` | Removes the specified element from the set, if it exists. |
 | `contains(Object o)` | Returns `true` if the set contains the specified element. |
