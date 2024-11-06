@@ -1,3 +1,12 @@
+/**
+ * ES234317 - Algorithms and Data Structures
+ * Gasal | 2024-2025
+ * Coursework   : 05
+ * Student ID   : 5026231174 
+ * Full Name    : Muhammad Razan Parisya Putra
+ * Class        : C
+ */
+
 class Sorting{
     int data [];
     
@@ -10,7 +19,7 @@ class Sorting{
         for(int d:data) output+=" "+d;
         return output;
     }
-    //buble sort
+    //bubble sort
     void bubleSort(){
         for(int s=this.data.length-2;s>=0;s--){
             for(int p=0;p<=s;p++){
@@ -65,22 +74,22 @@ class Sorting{
     
     //Merge Sort
     void mergeSort(){
-        //your code is here
+        split(this.data, 0, this.data.length - 1);
        
     }
     
     // Split the array into two subarrays, sort them and merge them
-    void split(int arr[], int l, int r) {
+    public void split(int arr[], int l, int r) {
         if (l < r) {
 
-        // m is the point where the array is divided into two subarrays
-        int m = (l + r) / 2;
+            // m is the point where the array is divided into two subarrays
+            int m = (l + r) / 2;
 
-        split(arr, l, m);
-        split(arr, m + 1, r);
+            split(arr, l, m);
+            split(arr, m + 1, r);
 
-        // Merge the sorted subarrays
-        merge(arr, l, m, r);
+            // Merge the sorted subarrays
+            merge(arr, l, m, r);
         }
     }
   
@@ -96,7 +105,7 @@ class Sorting{
         for (int i = 0; i < n1; i++)
         L[i] = arr[p + i];
         for (int j = 0; j < n2; j++)
-        M[j] = arr[q + 1 + j];
+        M[j] = arr[q + 1 + j]; // 
 
         // Maintain current index of sub-arrays and main array
         int i, j, k;
@@ -107,28 +116,28 @@ class Sorting{
         // Until we reach either end of either L or M, pick larger among
         // elements L and M and place them in the correct position at A[p..r]
         while (i < n1 && j < n2) {
-        if (L[i] <= M[j]) {
-            arr[k] = L[i];
-            i++;
-        } else {
-            arr[k] = M[j];
-            j++;
-        }
-        k++;
+            if (L[i] <= M[j]) {
+                arr[k] = L[i];
+                i++;
+            } else {
+                arr[k] = M[j];
+                j++;
+            }
+            k++;
         }
 
         // When we run out of elements in either L or M,
         // pick up the remaining elements and put in A[p..r]
         while (i < n1) {
-        arr[k] = L[i];
-        i++;
-        k++;
+            arr[k] = L[i];
+            i++;
+            k++;
         }
 
         while (j < n2) {
-        arr[k] = M[j];
-        j++;
-        k++;
+            arr[k] = M[j];
+            j++;
+            k++;
         }
     }
   
@@ -136,7 +145,7 @@ class Sorting{
     
     void reverse(){
         int r [] = new int[this.data.length];
-        // buar array baru yang akan diisi dengan data array yang sudah dibalik
+        // buat array baru yang akan diisi dengan data array yang sudah dibalik
         int l = this.data.length-1;
         // ambil index terakhir dari array yang akan dibalik
 

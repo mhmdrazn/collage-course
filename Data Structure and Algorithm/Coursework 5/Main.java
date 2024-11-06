@@ -1,5 +1,10 @@
 /**
- * Main class of the Java program.
+ * ES234317 - Algorithms and Data Structures
+ * Gasal | 2024-2025
+ * Coursework   : 05
+ * Student ID   : 5026231174 
+ * Full Name    : Muhammad Razan Parisya Putra
+ * Class        : C
  */
 
 public class Main {
@@ -43,6 +48,7 @@ public class Main {
         id = m.binarySearch(k);
         if(id==-1) System.out.println(k+ " is not found");
         else System.out.println(k+ " is found at index "+ id);
+
     }
 }
 
