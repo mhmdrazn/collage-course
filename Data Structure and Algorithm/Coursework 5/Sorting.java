@@ -115,8 +115,8 @@ class Sorting{
 
         // Until we reach either end of either L or M, pick larger among
         // elements L and M and place them in the correct position at A[p..r]
-        while (i < n1 && j < n2) {
-            if (L[i] <= M[j]) {
+        while (j < n2 && i < n1 ) {
+            if (M[j] >= L[i]) {
                 arr[k] = L[i];
                 i++;
             } else {
@@ -145,13 +145,14 @@ class Sorting{
     
     void reverse(){
         int r [] = new int[this.data.length];
-        // buat array baru yang akan diisi dengan data array yang sudah dibalik
+        // buat array baru yang akan diisi dengan array yang telah di reverse
         int l = this.data.length-1;
+        int ArrayLength = this.data.length;
         // ambil index terakhir dari array yang akan dibalik
 
         // lalu masukkan ke array baru
-        for (int i = 0; i < this.data.length; i++){
-            // masukkan data array yang sudah dibalik ke array baru
+        for (int i = 0; i < ArrayLength; i++){
+            // masukkan value yang sudah dibalik ke array r
             r[i] = this.data[l];
             // kurangi nilai l dengan 1
             l--;
