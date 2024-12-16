@@ -2,98 +2,97 @@ package GraphM;
 
 import java.util.*;
 
-class GraphM{
-    Map<String, ArrayList<String>> g; 
-    
-    GraphM(){
-        this.g = new TreeMap<String, ArrayList<String>>();
+class GraphM {
+    Map<String, ArrayList<String>> adjacencyList;
+
+    GraphM() {
+        this.adjacencyList = new TreeMap<String, ArrayList<String>>();
     }
-    
-    void addEdge(String v1, String v2){
-        ArrayList<String> al = g.get(v1); // ambil value dari v1
-        if (al == null){ // apabila null buat array baru dan masukkan v2
-            al = new ArrayList<>(); // buat array baru
-            al.add(v2); // tambahkan v2  
-            g.put(v1, al); // masukkan v2 ke map graph dgn key v1
-        } else { // apabila array list value sudah ada
-            al.add(v2); // tambahkan v2 ke dalam arraylist value al
+
+    void addEdge(String node1, String node2) {
+        ArrayList<String> neighbors1 = adjacencyList.get(node1);
+        if (neighbors1 == null) { // Jika node1 belum memiliki daftar tetangga
+            neighbors1 = new ArrayList<>();
+            neighbors1.add(node2);
+            adjacencyList.put(node1, neighbors1);
+        } else { // Jika node1 sudah memiliki daftar tetangga
+            neighbors1.add(node2);
         }
 
-        // tambahkan juga edge kebalikannna (undirected)
-        ArrayList<String> al2 = g.get(v2);
-        if (al2 == null){
-            al2 = new ArrayList<>();
-            al2.add(v1);
-            g.put(v2, al2);
+        // Tambahkan juga edge sebaliknya (graf tak berarah)
+        ArrayList<String> neighbors2 = adjacencyList.get(node2);
+        if (neighbors2 == null) {
+            neighbors2 = new ArrayList<>();
+            neighbors2.add(node1);
+            adjacencyList.put(node2, neighbors2);
         } else {
-            al2.add(v1);
+            neighbors2.add(node1);
         }
     }
 
-    void bfs(String root){
-        ArrayList<String> visitedNodes = new ArrayList<String>();
-        Stack<String> adj = new Stack<String>();
-        adj.push(root);
+    void dfs(String startNode) {
+        ArrayList<String> visitedNodes = new ArrayList<>();
+        Stack<String> stack = new Stack<>();
+        stack.push(startNode);
 
-        while(!adj.empty()){
-            String v = adj.pop();
+        while (!stack.empty()) {
+            String currentNode = stack.pop();
 
-            if (!visitedNodes.contains(v)){
-                visitedNodes.add(v);
-                System.out.print(v + " - ");
+            if (!visitedNodes.contains(currentNode)) {
+                visitedNodes.add(currentNode);
+                System.out.print(currentNode + " - ");
             }
 
-            ArrayList<String> al =g.get(v);
+            ArrayList<String> neighbors = adjacencyList.get(currentNode);
+            if (neighbors != null) {
+                Collections.sort(neighbors, Collections.reverseOrder()); // Sort secara descending
 
-            Collections.sort(al, Collections.reverseOrder());
-
-            for (String a:al){
-                if (!visitedNodes.contains(a)){
-                    adj.push(a);
+                for (String neighbor : neighbors) {
+                    if (!visitedNodes.contains(neighbor)) {
+                        stack.push(neighbor);
+                    }
                 }
             }
         }
     }
 
-    void dfs(String root){
-        ArrayList<String> visitedNodes = new ArrayList<String>();
-        Queue<String> adj = new LinkedList<String>();
-        adj.add(root);
+    void bfs(String startNode) {
+        ArrayList<String> visitedNodes = new ArrayList<>();
+        Queue<String> queue = new LinkedList<>();
+        queue.add(startNode);
 
-        while(!adj.isEmpty()){
-            String v = adj.poll();
+        while (!queue.isEmpty()) {
+            String currentNode = queue.poll();
 
-            if (!visitedNodes.contains(v)){
-                visitedNodes.add(v);
-                System.out.print(v + " - ");
+            if (!visitedNodes.contains(currentNode)) {
+                visitedNodes.add(currentNode);
+                System.out.print(currentNode + " - ");
             }
 
-            ArrayList<String> al =g.get(v);
+            ArrayList<String> neighbors = adjacencyList.get(currentNode);
+            if (neighbors != null) {
+                Collections.sort(neighbors, Collections.reverseOrder()); // Sort secara descending
 
-            Collections.sort(al, Collections.reverseOrder());
-
-            for (String a:al){
-                if (!visitedNodes.contains(a)){
-                    adj.add(a);
+                for (String neighbor : neighbors) {
+                    if (!visitedNodes.contains(neighbor)) {
+                        queue.add(neighbor);
+                    }
                 }
             }
         }
     }
-    
-    public String toString(){
-        String output="";
-        
-        for(String k: g.keySet()){
-            output+= k+"-->";
-            for(String a:g.get(k)){
-             output+= a+" ";
-                
+
+    public String toString() {
+        String output = "";
+
+        for (String node : adjacencyList.keySet()) {
+            output += node + "-->";
+            for (String neighbor : adjacencyList.get(node)) {
+                output += neighbor + " ";
             }
-            output+="\n";
+            output += "\n";
         }
-        
+
         return output;
     }
-
-    
 }
